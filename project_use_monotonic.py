@@ -371,8 +371,6 @@ while True:
                 if current_time - start_time >= 1:
                     start_time=current_time
                     break
-
-
             
             #후진한다.
             dc_rightback_backup(70)
