@@ -13,6 +13,8 @@ GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
  
 def distance():
+    
+    global start_time
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, 1)
  
