@@ -136,17 +136,18 @@ def dc_stop():
 #초음파센서
 #전방(가운데)
 def distance_mid():
-    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
+    start_time_mid=0
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     
     # set Trigger after 0.01ms to LOW
+    start_time_mid = time.monotonic()
     while True:
         current_time = time.monotonic()
-        if current_time - start_time >= 0.00001:
-            start_time=current_time
+        if current_time - start_time_mid >= 0.00001:
+            start_time_mid = current_time
             break
     
 
@@ -177,11 +178,12 @@ def distance_mid():
 
 #왼쪽 초음파센서
 def distance_left():
-    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
+    start_time_left = 0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 1)
     
     # set Trigger after 0.01ms to LOW
+    start_time_left = time.monotonic()
     while True:
         current_time = time.monotonic()
         if current_time - start_time >= 0.00001:
@@ -213,15 +215,16 @@ def distance_left():
 
 #오른쪽 초음파센서
 def distance_right():
-    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
+    start_time_right=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 1)
     
     # set Trigger after 0.01ms to LOW
+    start_time_right = time.monotonic()
     while True:
         current_time = time.monotonic()
-        if current_time - start_time >= 0.00001:
-            start_time=current_time
+        if current_time - start_time_right >= 0.00001:
+            start_time_right = current_time
             break
     
     GPIO.output(GPIO_TRIGGER_right, 0)
@@ -252,7 +255,7 @@ def distance_right():
 #중앙값 찾기
 def find_median():
     print("find_median function start!!")
-    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
+    start_time_median=0
     idx=0
     median=0
 
@@ -265,10 +268,11 @@ def find_median():
         list[j]=tmp
         
         #0.01초대기
+        start_time_median = time.monotonic()
         while True:
                 current_time = time.monotonic()
-                if current_time - start_time >= 0.01:
-                    start_time=current_time
+                if current_time - start_time_median >= 0.01:
+                    start_time_median=current_time
                     break
         
     
@@ -332,7 +336,7 @@ enA_pwm_front.start(0)
 enB_pwm_front=GPIO.PWM(enB_front, 100)
 enB_pwm_front.start(0)
 #==============================================main task==============================
-start_time = time.monotonic()  #시작시간측정, 전역변수이다.
+start_time_main = 0  #시작시간측정, 전역변수이다.
 
 while True:
     try:
@@ -427,10 +431,11 @@ while True:
         #time.sleep(0.1)
         #400행부터 404행까지의 명령은 사실상 없애고 싶으나, 일단 추가함. 0.1초동안 대기함(초음파
         # 센서 오작동을 피하기 위하여. 시스템 리소스 관련? 터미널창이 먹통이 된다!)
+        start_time_main = time.monotonic()
         while True:
             current_time = time.monotonic()
-            if current_time - start_time >= 0.1:
-                start_time=current_time
+            if current_time - start_time_main >= 0.1:
+                start_time_main=current_time
                 break
         
     except KeyboardInterrupt:
