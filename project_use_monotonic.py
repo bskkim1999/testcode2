@@ -364,9 +364,7 @@ while True:
         
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
             print("under 25cm!!")
-            dc_stop()
-        
-            
+           
             #방향판단
             if left<right:
                 wherego=1
@@ -383,7 +381,7 @@ while True:
             start_time_main = time.monotonic()
             while True:
                 current_time = time.monotonic()
-                if current_time - start_time_main >= 1:
+                if current_time - start_time_main >= 0.4:
                     start_time_main=current_time
                     break
             
