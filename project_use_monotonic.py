@@ -160,14 +160,14 @@ def distance_mid():
     
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
-        print("a")
+        print("{}".format(GPIO.input(GPIO_ECHO_mid)))
     
     print("b")
     
     # save time of arrival
     while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
-        print("c")
+        print("{}".format(GPIO.input(GPIO_ECHO_mid)))
         
     
     # time difference between start and arrival
