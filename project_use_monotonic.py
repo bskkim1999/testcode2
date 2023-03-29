@@ -353,7 +353,7 @@ while True:
             print("under 25cm!!")
             dc_stop()
         
-                
+            """
             #방향판단
             if left<right:
                 wherego=1
@@ -364,7 +364,8 @@ while True:
             #멈춘다.
             dc_stop()
             #time.sleep(1) #1초
-            
+            """
+            """
             #1초동안 대기한다.
             start_time_main = time.monotonic()
             while True:
@@ -405,6 +406,8 @@ while True:
                         start_time_main=current_time
                         break
             
+            """
+            """
             else:
                 #왼쪽으로 튼다.
                 dc_leftback_backup(100)
@@ -419,7 +422,7 @@ while True:
                     if current_time - start_time_main >= 0.7:
                         start_time_main=current_time
                         break
-            
+            """
           
         else:
             #전진한다.
