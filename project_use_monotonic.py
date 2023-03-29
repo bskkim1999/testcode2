@@ -366,10 +366,11 @@ while True:
             #time.sleep(1) #1초
             
             #1초동안 대기한다.
+            start_time_main = time.monotonic()
             while True:
                 current_time = time.monotonic()
-                if current_time - start_time >= 1:
-                    start_time=current_time
+                if current_time - start_time_main >= 1:
+                    start_time_main=current_time
                     break
             
             #후진한다.
@@ -381,10 +382,11 @@ while True:
             
             #time.sleep(0.7)  #0.7초
             #0.7초동안 대기한다.
+            start_time_main = time.monotonic()
             while True:
                 current_time = time.monotonic()
-                if current_time - start_time >= 0.7:
-                    start_time=current_time
+                if current_time - start_time_main >= 0.7:
+                    start_time_main=current_time
                     break
             
             #print("{}".format(wherego))
@@ -396,10 +398,11 @@ while True:
                 dc_rightback_backup(100)
                 #time.sleep(0.7)  #1초
                 #0.7초동안 대기한다.
+                start_time_main = time.monotonic()
                 while True:
                     current_time = time.monotonic()
-                    if current_time - start_time >= 0.7:
-                        start_time=current_time
+                    if current_time - start_time_main >= 0.7:
+                        start_time_main=current_time
                         break
             
             else:
@@ -410,10 +413,11 @@ while True:
                 dc_rightback(100)
                 #time.sleep(0.7)  #0.7초
                 #0.7초동안 대기한다.
+                start_time_main = time.monotonic()
                 while True:
                     current_time = time.monotonic()
-                    if current_time - start_time >= 0.7:
-                        start_time=current_time
+                    if current_time - start_time_main >= 0.7:
+                        start_time_main=current_time
                         break
             
           
