@@ -62,7 +62,7 @@ if __name__ == '__main__':
             
             while True:
                 current_time = time.monotonic()
-                if current_time - start_time1 >= 0.1:
+                if current_time - start_time1 >= 0.01:
                     start_time1=current_time
                     break
             
