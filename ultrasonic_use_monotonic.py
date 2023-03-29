@@ -57,17 +57,16 @@ if __name__ == '__main__':
             dist = distance()
             print ("Measured Distance = %.1f cm" % dist)
             
-            #start_time1=time.monotonic()
+            start_time1=time.monotonic()
             
-            """
+            
             while True:
                 current_time = time.monotonic()
                 if current_time - start_time1 >= 0.1:
                     start_time1=current_time
                     break
-            """
-            if dist<=10:
-                print("a")
+            
+            
     
     # Reset by pressing CTRL + C
     except KeyboardInterrupt:
