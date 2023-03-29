@@ -147,7 +147,6 @@ def distance_mid():
     while True:
         current_time = time.monotonic()
         if current_time - start_time_mid >= 0.00001:
-            start_time_mid = current_time
             break
     
 
@@ -187,7 +186,6 @@ def distance_left():
     while True:
         current_time = time.monotonic()
         if current_time - start_time_left >= 0.00001:
-            start_time_left=current_time
             break
 
     GPIO.output(GPIO_TRIGGER_left, 0)
@@ -224,7 +222,6 @@ def distance_right():
     while True:
         current_time = time.monotonic()
         if current_time - start_time_right >= 0.00001:
-            start_time_right = current_time
             break
     
     GPIO.output(GPIO_TRIGGER_right, 0)
@@ -272,7 +269,6 @@ def find_median():
         while True:
                 current_time = time.monotonic()
                 if current_time - start_time_median >= 0.01:
-                    start_time_median=current_time
                     break
         
     
@@ -434,7 +430,7 @@ while True:
         start_time_main = time.monotonic()
         while True:
             current_time = time.monotonic()
-            if current_time - start_time_main >= 0.1:
+            if current_time - start_time_main >= 0.05:
                 start_time_main=current_time
                 break
         
