@@ -13,18 +13,19 @@ GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
  
 def distance():
-    
-    global start_time
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, 1)
- 
+    
+    start_time = time.monotonic()  #시작시간측정
     # set Trigger after 0.01ms to LOW
+    
     while True:
         current_time = time.monotonic()
         if current_time - start_time >= 0.00001:
             start_time=current_time
             break
     
+
     GPIO.output(GPIO_TRIGGER, 0)
  
     StartTime = time.monotonic()
@@ -46,7 +47,7 @@ def distance():
  
     return distance
  
-start_time = time.monotonic()  #시작시간측정, 전역변수이다.
+
 
 if __name__ == '__main__':
     try:
