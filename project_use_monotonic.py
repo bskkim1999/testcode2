@@ -186,8 +186,8 @@ def distance_left():
     start_time_left = time.monotonic()
     while True:
         current_time = time.monotonic()
-        if current_time - start_time >= 0.00001:
-            start_time=current_time
+        if current_time - start_time_left >= 0.00001:
+            start_time_left=current_time
             break
 
     GPIO.output(GPIO_TRIGGER_left, 0)
