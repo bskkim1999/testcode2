@@ -431,7 +431,6 @@ while True:
         while True:
             current_time = time.monotonic()
             if current_time - start_time_main >= 0.05:
-                start_time_main=current_time
                 break
         
     except KeyboardInterrupt:
