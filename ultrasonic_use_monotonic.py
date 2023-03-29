@@ -13,18 +13,18 @@ GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
  
 def distance():
-    start_time=0
+    start_time2=0
     
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, 1)
     
-    start_time = time.monotonic()  #시작시간측정
+    start_time2 = time.monotonic()  #시작시간측정
     # set Trigger after 0.01ms to LOW
     
     while True:
         current_time = time.monotonic()
-        if current_time - start_time >= 0.00001:
-            start_time=current_time
+        if current_time - start_time2 >= 0.00001:
+            start_time2=current_time
             break
     
 
@@ -49,7 +49,7 @@ def distance():
  
     return distance
  
-
+start_time1=0
 
 if __name__ == '__main__':
     try:
@@ -57,10 +57,11 @@ if __name__ == '__main__':
             dist = distance()
             print ("Measured Distance = %.1f cm" % dist)
             
+            start_time1=time.monotonic()
             while True:
                 current_time = time.monotonic()
-                if current_time - start_time >= 0.1:
-                    start_time=current_time
+                if current_time - start_time1 >= 0.1:
+                    start_time1=current_time
                     break
  
     
