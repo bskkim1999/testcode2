@@ -268,7 +268,7 @@ def find_median():
         start_time_median = time.monotonic()
         while True:
                 current_time = time.monotonic()
-                if current_time - start_time_median >= 0.01:
+                if current_time - start_time_median >= 0.03:
                     break
         
     
