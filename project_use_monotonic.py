@@ -137,6 +137,7 @@ def dc_stop():
 #전방(가운데)
 def distance_mid():
     start_time_mid=0
+    count=0
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
@@ -160,14 +161,17 @@ def distance_mid():
     
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
-        print("{}".format(GPIO.input(GPIO_ECHO_mid)))
+        count = count + 1
+        if count>200:
+            break
+        
     
     print("b")
     
     # save time of arrival
     while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
-        print("{}".format(GPIO.input(GPIO_ECHO_mid)))
+        
         
     
     # time difference between start and arrival
