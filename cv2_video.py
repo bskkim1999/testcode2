@@ -8,7 +8,7 @@ if cap.isOpened():
     print('height:', cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     print('fps:', cap.get(cv2.CAP_PROP_FPS))
 
-while cap.isopened():
+while cap.isOpened():
     ret,img=cap.read()
 
     if ret:
