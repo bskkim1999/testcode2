@@ -165,11 +165,11 @@ def distance_mid():
         count = count + 1
         if count>300:
             StartTime = time.monotonic()
-            print("{}".format(count))
+            print("count:{}".format(count))
             break
         
     
-    print("b")
+    
     #GPIO.setup(GPIO_ECHO_mid, GPIO.OUT)
     #GPIO.output(GPIO_ECHO_mid, 1)
     #GPIO.setup(GPIO_ECHO_mid, GPIO.IN)
