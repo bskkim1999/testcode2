@@ -192,7 +192,7 @@ def distance_mid():
 #왼쪽 초음파센서
 def distance_left():
     start_time_left = 0
-    count=0
+    
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 1)
     
@@ -211,13 +211,7 @@ def distance_left():
     # save StartTime
     while GPIO.input(GPIO_ECHO_left) == 0:
         StartTime = time.monotonic()
-        #강제멈춤
-        count = count + 1
-        print("count_left:{}".format(count))
         
-        if count>200:
-            StartTime = time.monotonic()
-            break
        
     
     # save time of arrival
