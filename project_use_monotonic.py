@@ -140,6 +140,7 @@ def distance_mid():
     count=0
     # set Trigger to HIGH
     print("distance_mid function start!!")
+    GPIO.output(GPIO_TRIGGER_mid, 0)
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     
@@ -199,14 +200,14 @@ def distance_left():
     
     # set Trigger after 0.01ms to LOW
     start_time_left = time.monotonic()
-    print("left_time:{}".format(start_time_left))
+    
     while True:
         current_time = time.monotonic()
         if current_time - start_time_left >= 0.00001:
             break
 
     GPIO.output(GPIO_TRIGGER_left, 0)
-    print("left_time:{}".format(start_time_left))
+    
 
     StartTime = time.monotonic()
     StopTime = time.monotonic()
@@ -242,6 +243,7 @@ def distance_right():
     start_time_right=0
     count=0
     # set Trigger to HIGH
+    GPIO.output(GPIO_TRIGGER_right, 0)
     GPIO.output(GPIO_TRIGGER_right, 1)
     
     # set Trigger after 0.01ms to LOW
@@ -373,14 +375,14 @@ while True:
         print("start!!")
         
         
-        #mid=find_median()
+        mid=find_median()
         left=distance_left()
-        #right=distance_right()
+        right=distance_right()
         wherego=0
         
-        #print ("Mid = %.1f cm" % mid, end=" " )
+        print ("Mid = %.1f cm" % mid, end=" " )
         print ("left = %.1f cm" % left, end=" " )
-        #print ("right = %.1f cm" % right )
+        print ("right = %.1f cm" % right )
         
         """
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
