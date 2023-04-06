@@ -137,7 +137,7 @@ def dc_stop():
 #전방(가운데)
 def distance_mid():
     start_time_mid=0
-    count=0
+    
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 0)
@@ -162,20 +162,14 @@ def distance_mid():
     
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
-        #강제멈춤
-        count = count + 1
-        if count>200:
-            StartTime = time.monotonic()
-            break
+        
         
     
     # save time of arrival
     while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
-        #print("stoptime : {}".format(StopTime))
         
         
-    
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
@@ -189,7 +183,7 @@ def distance_mid():
 def distance_left():
     print("distance_left function start!!")
     start_time_left = 0
-    count=0
+    
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 0)
     
@@ -232,7 +226,6 @@ def distance_left():
 def distance_right():
     print("distance_right function start!!")
     start_time_right=0
-    count=0
     
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 0)
@@ -255,11 +248,7 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
-        #강제멈춤
-        count = count + 1
-        if count>200:
-            StartTime = time.monotonic()
-            break
+        
 
         
     # save time of arrival
