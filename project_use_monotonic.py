@@ -175,7 +175,7 @@ def distance_mid():
     # save time of arrival
     while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
-        print("stoptime : {}".format(StopTime))
+        #print("stoptime : {}".format(StopTime))
         
         
     
