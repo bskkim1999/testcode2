@@ -221,7 +221,7 @@ def distance_left():
         count = count + 1
         print("count_left:{}".format(count))
         
-        if count>200:
+        if count>1000:
             StartTime = time.monotonic()
             break
         
@@ -268,7 +268,7 @@ def distance_right():
         count = count + 1
         print("count_right:{}".format(count))
         
-        if count>200:
+        if count>1000:
             StartTime = time.monotonic()
             break
         
