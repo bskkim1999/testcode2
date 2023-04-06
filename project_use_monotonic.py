@@ -163,7 +163,7 @@ def distance_mid():
         StartTime = time.monotonic()
         #강제멈춤
         count = count + 1
-        if count>200:
+        if count>500:
             StartTime = time.monotonic()
             break
         
