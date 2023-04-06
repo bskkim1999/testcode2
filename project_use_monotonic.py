@@ -370,13 +370,13 @@ while True:
         print("start!!")
         
         
-        mid=find_median()
-        left=distance_left()
+        #mid=find_median()
+        #left=distance_left()
         right=distance_right()
         wherego=0
         
-        print ("Mid = %.1f cm" % mid, end=" " )
-        print ("left = %.1f cm" % left, end=" " )
+        #print ("Mid = %.1f cm" % mid, end=" " )
+        #print ("left = %.1f cm" % left, end=" " )
         print ("right = %.1f cm" % right )
         
         """
