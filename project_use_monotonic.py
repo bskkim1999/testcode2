@@ -141,6 +141,7 @@ def distance_mid():
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 0)
+    time.sleep(0.001)
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     
@@ -196,6 +197,7 @@ def distance_left():
     count=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 0)
+    time.sleep(0.001)
     GPIO.output(GPIO_TRIGGER_left, 1)
     
     # set Trigger after 0.01ms to LOW
@@ -244,6 +246,7 @@ def distance_right():
     count=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 0)
+    time.sleep(0.001)
     GPIO.output(GPIO_TRIGGER_right, 1)
     
     # set Trigger after 0.01ms to LOW
