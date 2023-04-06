@@ -163,12 +163,12 @@ def distance_mid():
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        count = count + 1
-        print("count_mid:{}".format(count))
+        #count = count + 1
+        #print("count_mid:{}".format(count))
         
-        if count>1000:
-            StartTime = time.monotonic()
-            break
+        #if count>1000:
+        #    StartTime = time.monotonic()
+        #    break
         
     
     
@@ -218,12 +218,12 @@ def distance_left():
     while GPIO.input(GPIO_ECHO_left) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        count = count + 1
-        print("count_left:{}".format(count))
+        #count = count + 1
+        #print("count_left:{}".format(count))
         
-        if count>1000:
-            StartTime = time.monotonic()
-            break
+        #if count>1000:
+       #     StartTime = time.monotonic()
+         #   break
         
        
     
@@ -385,15 +385,15 @@ while True:
     try:
         print("start!!")
         
-        right=distance_right()
-        #mid=find_median()
-        #left=distance_left()
+        #right=distance_right()
+        mid=find_median()
+        left=distance_left()
         
         wherego=0
         
-        #print ("Mid = %.1f cm" % mid, end=" " )
-        #print ("left = %.1f cm" % left, end=" " )
-        print ("right = %.1f cm" % right )
+        print ("Mid = %.1f cm" % mid, end=" " )
+        print ("left = %.1f cm" % left, end=" " )
+        #print ("right = %.1f cm" % right )
         
         """
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
