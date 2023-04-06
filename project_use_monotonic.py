@@ -141,7 +141,7 @@ def distance_mid():
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 0)
-    time.sleep(0.1)
+    
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     
@@ -163,18 +163,12 @@ def distance_mid():
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        #count = count + 1
-        #print("count_mid:{}".format(count))
-        
-        #if count>1000:
-        #    StartTime = time.monotonic()
-        #    break
+        count = count + 1
+        if count>200:
+            StartTime = time.monotonic()
+            break
         
     
-    
-    #GPIO.setup(GPIO_ECHO_mid, GPIO.OUT)
-    #GPIO.output(GPIO_ECHO_mid, 1)
-    #GPIO.setup(GPIO_ECHO_mid, GPIO.IN)
     # save time of arrival
     while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
@@ -197,7 +191,7 @@ def distance_left():
     count=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 0)
-    time.sleep(0.1)
+    
     GPIO.output(GPIO_TRIGGER_left, 1)
     
     # set Trigger after 0.01ms to LOW
@@ -217,15 +211,8 @@ def distance_left():
     # save StartTime
     while GPIO.input(GPIO_ECHO_left) == 0:
         StartTime = time.monotonic()
-        #강제멈춤
-        #count = count + 1
-        #print("count_left:{}".format(count))
         
-        #if count>1000:
-       #     StartTime = time.monotonic()
-         #   break
         
-       
     
     # save time of arrival
     while GPIO.input(GPIO_ECHO_left) == 1:
@@ -247,11 +234,12 @@ def distance_right():
     count2=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 0)
-    time.sleep(0.1)
+    
     GPIO.output(GPIO_TRIGGER_right, 1)
     
     # set Trigger after 0.01ms to LOW
     start_time_right = time.monotonic()
+    
     while True:
         current_time = time.monotonic()
         if current_time - start_time_right >= 0.00001:
@@ -265,25 +253,12 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
-        #강제멈춤
-        count = count + 1
-        print("count_right1:{}".format(count))
         
-        #if count>100:
-         #   StartTime = time.monotonic()
-         #   break
-        
-    
+      
     # save time of arrival
     while GPIO.input(GPIO_ECHO_right) == 1:
         StopTime = time.monotonic()
-        #강제멈춤
-        count2 = count2 + 1
-        print("count_right2:{}".format(count2))
         
-        if count2>100:
-            StartTime = time.monotonic()
-            break
         
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
@@ -385,7 +360,7 @@ while True:
     try:
         print("start!!")
         
-        #right=distance_right()
+        right=distance_right()
         mid=find_median()
         left=distance_left()
         
@@ -393,9 +368,9 @@ while True:
         
         print ("Mid = %.1f cm" % mid, end=" " )
         print ("left = %.1f cm" % left, end=" " )
-        #print ("right = %.1f cm" % right )
+        print ("right = %.1f cm" % right )
         
-        """
+        
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
             print("under 25cm!!")
            
@@ -476,7 +451,7 @@ while True:
             dc_leftfront(100)
             dc_rightfront(100)
         
-        """
+        
 
 
         #time.sleep(0.1)
