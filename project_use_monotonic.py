@@ -262,7 +262,6 @@ def distance_right():
             break
 
         
-      
     # save time of arrival
     while GPIO.input(GPIO_ECHO_right) == 1:
         StopTime = time.monotonic()
