@@ -165,6 +165,7 @@ def distance_mid():
         count = count + 1
         if count>300:
             StartTime = time.monotonic()
+            print("{}".format(count))
             break
         
     
