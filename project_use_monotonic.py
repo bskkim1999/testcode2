@@ -194,17 +194,20 @@ def distance_left():
     start_time_left = 0
     count=0
     # set Trigger to HIGH
+    GPIO.output(GPIO_TRIGGER_left, 0)
     GPIO.output(GPIO_TRIGGER_left, 1)
     
     # set Trigger after 0.01ms to LOW
     start_time_left = time.monotonic()
+    print("left_time:{}".format(start_time_left))
     while True:
         current_time = time.monotonic()
         if current_time - start_time_left >= 0.00001:
             break
 
     GPIO.output(GPIO_TRIGGER_left, 0)
- 
+    print("left_time:{}".format(start_time_left))
+
     StartTime = time.monotonic()
     StopTime = time.monotonic()
     
