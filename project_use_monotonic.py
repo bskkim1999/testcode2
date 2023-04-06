@@ -357,11 +357,11 @@ while True:
         right=distance_right()
         wherego=0
         
-        #print ("Mid = %.1f cm" % mid, end=" " )
-        #print ("left = %.1f cm" % left, end=" " )
-        #print ("right = %.1f cm" % right )
+        print ("Mid = %.1f cm" % mid, end=" " )
+        print ("left = %.1f cm" % left, end=" " )
+        print ("right = %.1f cm" % right )
         
-        
+        """
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
             print("under 25cm!!")
            
@@ -442,6 +442,9 @@ while True:
             dc_leftfront(100)
             dc_rightfront(100)
         
+        """
+
+
         #time.sleep(0.1)
         #400행부터 404행까지의 명령은 사실상 없애고 싶으나, 일단 추가함. 0.1초동안 대기함(초음파
         # 센서 오작동을 피하기 위하여. 시스템 리소스 관련? 터미널창이 먹통이 된다!)
