@@ -255,6 +255,12 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
+        #강제멈춤
+        count = count + 1
+        if count>200:
+            StartTime = time.monotonic()
+            break
+
         
       
     # save time of arrival
