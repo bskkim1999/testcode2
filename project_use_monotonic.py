@@ -377,10 +377,10 @@ while True:
     try:
         print("start!!")
         
-        
+        right=distance_right()
         mid=find_median()
         left=distance_left()
-        right=distance_right()
+        
         wherego=0
         
         print ("Mid = %.1f cm" % mid, end=" " )
