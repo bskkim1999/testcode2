@@ -192,7 +192,7 @@ def distance_mid():
 #왼쪽 초음파센서
 def distance_left():
     start_time_left = 0
-    
+    count=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 1)
     
@@ -211,6 +211,13 @@ def distance_left():
     # save StartTime
     while GPIO.input(GPIO_ECHO_left) == 0:
         StartTime = time.monotonic()
+        #강제멈춤
+        count = count + 1
+        print("count_left:{}".format(count))
+        
+        if count>200:
+            StartTime = time.monotonic()
+            break
         
        
     
@@ -230,6 +237,7 @@ def distance_left():
 #오른쪽 초음파센서
 def distance_right():
     start_time_right=0
+    count=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 1)
     
@@ -248,6 +256,13 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
+        #강제멈춤
+        count = count + 1
+        print("count_right:{}".format(count))
+        
+        if count>200:
+            StartTime = time.monotonic()
+            break
         
     
     # save time of arrival
@@ -356,13 +371,13 @@ while True:
         
         
         mid=find_median()
-        #left=distance_left()
-        #right=distance_right()
+        left=distance_left()
+        right=distance_right()
         wherego=0
         
         print ("Mid = %.1f cm" % mid, end=" " )
-        #print ("left = %.1f cm" % left, end=" " )
-        #print ("right = %.1f cm" % right )
+        print ("left = %.1f cm" % left, end=" " )
+        print ("right = %.1f cm" % right )
         
         """
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
