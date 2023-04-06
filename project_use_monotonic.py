@@ -244,6 +244,7 @@ def distance_left():
 def distance_right():
     start_time_right=0
     count=0
+    count2=0
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 0)
     time.sleep(0.1)
@@ -266,7 +267,7 @@ def distance_right():
         StartTime = time.monotonic()
         #강제멈춤
         count = count + 1
-        print("count_right:{}".format(count))
+        print("count_right1:{}".format(count))
         
         if count>1000:
             StartTime = time.monotonic()
@@ -276,6 +277,13 @@ def distance_right():
     # save time of arrival
     while GPIO.input(GPIO_ECHO_right) == 1:
         StopTime = time.monotonic()
+        #강제멈춤
+        count2 = count2 + 1
+        print("count_right2:{}".format(count2))
+        
+        if count2>1000:
+            StartTime = time.monotonic()
+            break
         
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
