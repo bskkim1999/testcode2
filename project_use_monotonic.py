@@ -187,6 +187,7 @@ def distance_mid():
 
 #왼쪽 초음파센서
 def distance_left():
+    print("distance_left function start!!")
     start_time_left = 0
     count=0
     # set Trigger to HIGH
@@ -229,6 +230,7 @@ def distance_left():
 
 #오른쪽 초음파센서
 def distance_right():
+    print("distance_right function start!!")
     start_time_right=0
     count=0
     
