@@ -148,7 +148,6 @@ def distance_mid():
     while True:
         current_time = time.monotonic()
         if current_time - start_time_mid >= 0.00001:
-            print("{}".format(current_time - start_time_mid))
             break
     
 
