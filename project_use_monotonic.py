@@ -380,12 +380,12 @@ while True:
         
         #mid=find_median()
         left=distance_left()
-        right=distance_right()
+        #right=distance_right()
         wherego=0
         
         #print ("Mid = %.1f cm" % mid, end=" " )
         print ("left = %.1f cm" % left, end=" " )
-        print ("right = %.1f cm" % right )
+        #print ("right = %.1f cm" % right )
         
         """
         if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
