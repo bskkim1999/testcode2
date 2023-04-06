@@ -161,12 +161,12 @@ def distance_mid():
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        count = count + 1
-        print("count_mid:{}".format(count))
+        #count = count + 1
+        #print("count_mid:{}".format(count))
         
-        if count>200:
-            StartTime = time.monotonic()
-            break
+        #if count>200:
+        #    StartTime = time.monotonic()
+        #    break
         
     
     
