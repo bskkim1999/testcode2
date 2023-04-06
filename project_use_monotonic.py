@@ -161,12 +161,12 @@ def distance_mid():
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        count = count + 1
-        print("count_mid:{}".format(count))
+        #count = count + 1
+        #print("count_mid:{}".format(count))
         
-        if count>200:
-            StartTime = time.monotonic()
-            break
+        #if count>200:
+        #    StartTime = time.monotonic()
+         #   break
         
     
     
@@ -212,12 +212,12 @@ def distance_left():
     while GPIO.input(GPIO_ECHO_left) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        count = count + 1
-        print("count_left:{}".format(count))
+        #count = count + 1
+        #print("count_left:{}".format(count))
         
-        if count>200:
-            StartTime = time.monotonic()
-            break
+        #if count>200:
+        #    StartTime = time.monotonic()
+        #    break
         
        
     
@@ -257,12 +257,12 @@ def distance_right():
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
         #강제멈춤
-        count = count + 1
-        print("count_right:{}".format(count))
+        #count = count + 1
+        #print("count_right:{}".format(count))
         
-        if count>200:
-            StartTime = time.monotonic()
-            break
+        #if count>200:
+        #    StartTime = time.monotonic()
+         #   break
         
     
     # save time of arrival
