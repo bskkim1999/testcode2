@@ -141,7 +141,7 @@ def distance_mid():
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 0)
-    time.sleep(0.001)
+    time.sleep(0.1)
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     
