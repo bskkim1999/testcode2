@@ -269,9 +269,9 @@ def distance_right():
         count = count + 1
         print("count_right1:{}".format(count))
         
-        if count>100:
-            StartTime = time.monotonic()
-            break
+        #if count>100:
+         #   StartTime = time.monotonic()
+         #   break
         
     
     # save time of arrival
