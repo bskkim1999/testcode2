@@ -360,8 +360,8 @@ while True:
     try:
         print("start!!")
         
-        right=distance_right()
         mid=find_median()
+        right=distance_right()
         left=distance_left()
         
         wherego=0
