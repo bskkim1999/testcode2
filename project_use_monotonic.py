@@ -231,7 +231,7 @@ def distance_left():
 def distance_right():
     start_time_right=0
     count=0
-    count2=0
+    
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 0)
     
