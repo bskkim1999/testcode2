@@ -379,7 +379,6 @@ while True:
 
             #멈춘다.
             dc_stop()
-            #time.sleep(1) #1초
             
             
             #1초동안 대기한다.
@@ -396,8 +395,6 @@ while True:
             dc_leftfront_backup(70)
             dc_rightfront_backup(70)
             
-            
-            #time.sleep(0.7)  #0.7초
             #0.7초동안 대기한다.
             start_time_main = time.monotonic()
             while True:
@@ -406,14 +403,14 @@ while True:
                     start_time_main=current_time
                     break
             
-            #print("{}".format(wherego))
+            
             if wherego== 1:
                 #오른쪽으로 튼다.
                 dc_leftfront(100)
                 dc_leftback(100)
                 dc_rightfront_backup(100)
                 dc_rightback_backup(100)
-                #time.sleep(0.7)  #1초
+                
                 #0.7초동안 대기한다.
                 start_time_main = time.monotonic()
                 while True:
@@ -430,7 +427,7 @@ while True:
                 dc_leftfront_backup(100)
                 dc_rightfront(100)
                 dc_rightback(100)
-                #time.sleep(0.7)  #0.7초
+                
                 #0.7초동안 대기한다.
                 start_time_main = time.monotonic()
                 while True:
@@ -449,17 +446,6 @@ while True:
         
         
 
-
-        #time.sleep(0.1)
-        #400행부터 404행까지의 명령은 사실상 없애고 싶으나, 일단 추가함. 0.1초동안 대기함(초음파
-        # 센서 오작동을 피하기 위하여. 시스템 리소스 관련? 터미널창이 먹통이 된다!)
-        """
-        start_time_main = time.monotonic()
-        while True:
-            current_time = time.monotonic()
-            if current_time - start_time_main >= 0.05:
-                break
-        """
     except KeyboardInterrupt:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
