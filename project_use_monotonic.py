@@ -368,7 +368,7 @@ while True:
         print ("left = %.1f cm" % left, end=" " )
         print ("right = %.1f cm" % right )
         
-        
+        """
         if mid<=25.0:  
             print("under 25cm!!")
            
@@ -445,7 +445,7 @@ while True:
             dc_leftback(100)
             dc_leftfront(100)
             dc_rightfront(100)
-        
+        """
         
 
     except KeyboardInterrupt:
