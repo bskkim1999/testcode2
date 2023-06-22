@@ -283,14 +283,14 @@ def find_median():
         
         tmp=distance_mid()
         list[j]=tmp
-        """
+
         #0.01초대기
         start_time_median = time.monotonic()
         while True:
                 current_time = time.monotonic()
                 if current_time - start_time_median >= 0.01:
                     break
-        """
+
     
     #자료를 오름차순으로 정렬한다.
     list.sort()
