@@ -154,7 +154,8 @@ def distance_mid():
     
 
     GPIO.output(GPIO_TRIGGER_mid, 0)
-    
+    time.sleep(0.00001)
+
     StartTime = time.monotonic()
     StopTime = time.monotonic()
     
@@ -198,7 +199,7 @@ def distance_left():
             break
 
     GPIO.output(GPIO_TRIGGER_left, 0)
-    
+    time.sleep(0.00001)
 
     StartTime = time.monotonic()
     StopTime = time.monotonic()
@@ -241,7 +242,8 @@ def distance_right():
             break
     
     GPIO.output(GPIO_TRIGGER_right, 0)
- 
+    time.sleep(0.00001)
+
     StartTime = time.monotonic()
     StopTime = time.monotonic()
     
@@ -281,14 +283,14 @@ def find_median():
         
         tmp=distance_mid()
         list[j]=tmp
-        
+        """
         #0.01초대기
         start_time_median = time.monotonic()
         while True:
                 current_time = time.monotonic()
                 if current_time - start_time_median >= 0.01:
                     break
-        
+        """
     
     #자료를 오름차순으로 정렬한다.
     list.sort()
