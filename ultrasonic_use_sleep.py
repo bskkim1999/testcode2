@@ -62,8 +62,8 @@ def test():
 if __name__ == '__main__':
     try:
         while True:
-            dist = test()
-            #print ("Measured Distance = %.1f cm" % dist)
+            dist = distance()
+            print ("Measured Distance = %.1f cm" % dist)
             #time.sleep(0.1)
             
  
