@@ -41,13 +41,13 @@ def distance():
  
     return distance
 
-def gpio_clean(){
+def gpio_clean():
 
     GPIO.output(GPIO_TRIGGER, 0)
     GPIO.output(GPIO_ECHO, 0)
 
     return None
-}
+
 
 
 if __name__ == '__main__':
