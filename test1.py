@@ -20,6 +20,7 @@ while True:
 
     except:
         print("finish!!")
+        GPIO.output(pin, 0)
         GPIO.cleanup()
         
         exit(1)
