@@ -38,9 +38,9 @@ def distance():
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
-    distance = (TimeElapsed * 34300) / 2
+    distance_answer = (TimeElapsed * 34300) / 2
  
-    return distance
+    return distance_answer
 
 def gpio_clean():
 
@@ -61,7 +61,7 @@ def test():
 if __name__ == '__main__':
     try:
         while True:
-            dist = test()
+            dist = distance()
             #print ("Measured Distance = %.1f cm" % dist)
             #time.sleep(0.1)
             
