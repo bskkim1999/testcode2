@@ -12,7 +12,14 @@ GPIO.setup(pin, GPIO.OUT)
 
 
 while True:
-    GPIO.output(pin,0)
-    time.sleep(0.1)
-    GPIO.output(pin,1)
-    time.sleep(0.1)
+    try:
+        GPIO.output(pin,0)
+        time.sleep(0.1)
+        GPIO.output(pin,1)
+        time.sleep(0.1)
+
+    except:
+        print("finish!!")
+        GPIO.cleanup()
+        
+        exit(1)
