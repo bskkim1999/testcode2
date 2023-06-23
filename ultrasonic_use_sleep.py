@@ -3,7 +3,8 @@ import time
  
 #GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
- 
+GPIO.setwarnings(False)
+
 #set GPIO Pins
 GPIO_TRIGGER = 21
 GPIO_ECHO = 20
@@ -44,7 +45,7 @@ def distance():
 def gpio_clean():
 
     GPIO.output(GPIO_TRIGGER, 0)
-    GPIO.output(GPIO_ECHO, 0)
+    
 
     return None
 
