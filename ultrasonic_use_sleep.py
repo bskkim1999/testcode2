@@ -56,6 +56,7 @@ def test():
     time.sleep(0.00001)
     # set Trigger after 0.01ms to LOW
     GPIO.output(GPIO_TRIGGER, 0)
+    print(2)
 
 
 if __name__ == '__main__':
