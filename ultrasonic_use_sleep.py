@@ -73,3 +73,4 @@ if __name__ == '__main__':
         print("Measurement stopped by User")
         gpio_clean()
         GPIO.cleanup()
+        exit(1)
