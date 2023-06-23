@@ -50,11 +50,18 @@ def gpio_clean():
     return None
 
 
+def test():
+    GPIO.output(GPIO_TRIGGER, 0)
+    GPIO.output(GPIO_TRIGGER, 1)
+    time.sleep(0.00001)
+    # set Trigger after 0.01ms to LOW
+    GPIO.output(GPIO_TRIGGER, 0)
+
 
 if __name__ == '__main__':
     try:
         while True:
-            distance()
+            dist = distance()
             #print ("Measured Distance = %.1f cm" % dist)
             #time.sleep(0.1)
             
