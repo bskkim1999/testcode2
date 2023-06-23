@@ -25,7 +25,7 @@ while True:
         print("finish!!")
         GPIO.output(pin, 0)
         GPIO.output(pin2, 0)
-        
-        GPIO.cleanup()
+
+        #GPIO.cleanup()
         
         exit(1)
