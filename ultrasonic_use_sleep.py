@@ -5,14 +5,16 @@ import time
 GPIO.setmode(GPIO.BCM)
  
 #set GPIO Pins
-GPIO_TRIGGER = 18
-GPIO_ECHO = 15
+GPIO_TRIGGER = 21
+GPIO_ECHO = 20
  
 #set GPIO direction (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
  
 def distance():
+    
+    GPIO.output(GPIO_TRIGGER, 0)
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, 1)
  
@@ -38,7 +40,16 @@ def distance():
     distance = (TimeElapsed * 34300) / 2
  
     return distance
- 
+
+def gpio_clean(){
+
+    GPIO.output(GPIO_TRIGGER, 0)
+    GPIO.output(GPIO_ECHO, 0)
+
+    return None
+}
+
+
 if __name__ == '__main__':
     try:
         while True:
@@ -50,4 +61,5 @@ if __name__ == '__main__':
     # Reset by pressing CTRL + C
     except KeyboardInterrupt:
         print("Measurement stopped by User")
+        
         GPIO.cleanup()
